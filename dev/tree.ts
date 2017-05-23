@@ -24,7 +24,12 @@ class Tree {
         this.y = y;
 
         // dit vlot heeft kippen nodig
-        // ...
+        let chickens : Array<Chicken> = new Array();
+
+        for (var index = 0; index < 4; index++)
+        {
+            chickens.push(new Chicken(index * 100, -63, this));
+        }
     }
     
     public move():void {

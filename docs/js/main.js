@@ -26,6 +26,10 @@ var Tree = (function () {
         this.height = 86;
         this.x = x;
         this.y = y;
+        var chickens = new Array();
+        for (var index = 0; index < 4; index++) {
+            chickens.push(new Chicken(index * 100, -63, this));
+        }
     }
     Object.defineProperty(Tree.prototype, "div", {
         get: function () {
@@ -46,10 +50,16 @@ var Game = (function () {
     function Game() {
         var _this = this;
         this.trees = new Array();
+        this.trees.push(new Tree(-420, 60));
+        this.trees.push(new Tree(-420, 300));
         requestAnimationFrame(function () { return _this.gameLoop(); });
     }
     Game.prototype.gameLoop = function () {
         var _this = this;
+        for (var _i = 0, _a = this.trees; _i < _a.length; _i++) {
+            var tree = _a[_i];
+            tree.move();
+        }
         requestAnimationFrame(function () { return _this.gameLoop(); });
     };
     return Game;
