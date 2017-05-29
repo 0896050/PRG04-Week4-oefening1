@@ -1,4 +1,6 @@
-/// <reference path="tree.ts"/>
+/// <reference path="chicken.ts"/>
+/// <reference path="tree.ts" />
+/// <reference path="bullet.ts" />
 
 class Game {
     
@@ -24,4 +26,6 @@ class Game {
         requestAnimationFrame(() => this.gameLoop());
     }
 } 
+
+
 

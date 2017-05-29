@@ -1,4 +1,5 @@
 /// <reference path="tree.ts"/>
+/// <reference path="gun.ts" />
 
 class Chicken {
     
@@ -23,9 +24,16 @@ class Chicken {
         
         this._div.style.transform = "translate("+this.x+"px, "+this.y+"px)";
 
+        this._div.addEventListener("click", (e: MouseEvent) => this.myGun(e));
+
+        
         // maak hier een click listener
         // de click event handler moet een gun toevoegen
         // als de kip al een gun heeft, dan moet de fire() functie van de gun worden aangeroepen
     }
 
+    private myGun(e: MouseEvent)
+        {         
+            let gun = new Gun(0, 0, this);
+        }
 }
