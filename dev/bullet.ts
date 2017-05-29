@@ -21,6 +21,7 @@ class Bullet {
         this.xspeed = -1;
         this.yspeed = 1;
 
+// op de een of andere manier gebruiken?????
         this.move();
     }
 
